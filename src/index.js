@@ -4,9 +4,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const ul = document.getElementById('tasks')
   form.addEventListener("submit", e=>{
     e.preventDefault()
-    let li = document.createElement('li')
-    li.innerText = input.value
+    const li = document.createElement('li')
+    li.innerHTML = input.value +
+    `<button data-description="${input.value}" name="button">X</button>`
     ul.append(li)
     input.value= ""
   })
+
 });
